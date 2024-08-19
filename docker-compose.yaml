@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_NEWSAPI_API_KEY: '<YOUR_KEY>'
+      VITE_GUARDIAN_API_KEY: '<YOUR_KEY>'
+      VITE_NEWYORKTIMES_API_KEY: '<YOUR_KEY>'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
